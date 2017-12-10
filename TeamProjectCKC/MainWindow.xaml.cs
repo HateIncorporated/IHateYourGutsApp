@@ -28,8 +28,6 @@ namespace TeamProjectCKC
             InitializeComponent();
             using (var db = new Context())
             {
-                
-
                 var account = new Account { Login = "wedfvb" };
                 db.Accounts.Add(account);
                 db.SaveChanges();
