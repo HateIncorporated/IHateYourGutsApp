@@ -22,6 +22,7 @@ namespace TeamProjectCKC
     {
         public MainWindow()
         {
+            //lul
             InitializeComponent();
         }
     }
