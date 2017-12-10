@@ -24,6 +24,7 @@ namespace TeamProjectCKC
     {
         public MainWindow()
         {
+            
             InitializeComponent();
             using (var db = new Context())
             {
