@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LibraryV1;
+using System.Data.Entity;
 
 namespace TeamProjectCKC
 {
@@ -23,6 +25,14 @@ namespace TeamProjectCKC
         public MainWindow()
         {
             InitializeComponent();
+            using (var db = new Context())
+            {
+                
+
+                var account = new Account { Login = "wedfvb" };
+                db.Accounts.Add(account);
+                db.SaveChanges();
+            }
         }
     }
 }
