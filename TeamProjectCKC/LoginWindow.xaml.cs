@@ -10,28 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LibraryV1;
-using System.Data.Entity;
 
 namespace TeamProjectCKC
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для LoginWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        public LoginWindow()
         {
-            
             InitializeComponent();
-            using (var db = new Context())
-            {
-                var account = new Account { Login = "wedfvb" };
-                db.Accounts.Add(account);
-                db.SaveChanges();
-            }
+        }
+
+        private void buttonLoginWindow_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
