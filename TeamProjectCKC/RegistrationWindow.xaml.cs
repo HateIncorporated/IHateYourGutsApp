@@ -46,7 +46,7 @@ namespace TeamProjectCKC
                     textBoxFirstName.Text == "" ||
                     passwordBox.Password == "")
                 {
-                    MessageBox.Show("Please fill all information.");
+                    MessageBox.Show("Please fill in all information.");
                     return;
                 }
                 if (passwordBox.Password != passwordBoxConfirm.Password)
@@ -57,14 +57,15 @@ namespace TeamProjectCKC
             
                 foreach (var user in context.Users)
                 {
-                    if (user.Login == textBlockLogin.Text)
+                    if (user.Login == textBoxLogin.Text)
                     {
+                        MessageBox.Show("User with such login already exists. Please enter another login.");
                         return;
                     }
                 }
                 context.Users.Add(new User
                 {
-                    Name = textBoxLastName.Text + textBoxFirstName.Text,
+                    Name = textBoxLastName.Text + " " + textBoxFirstName.Text,
                     Login = textBoxLogin.Text,
                     Password = passwordBox.Password,
                 });

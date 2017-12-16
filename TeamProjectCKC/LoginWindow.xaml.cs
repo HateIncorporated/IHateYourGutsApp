@@ -31,6 +31,7 @@ namespace TeamProjectCKC
             string LoginCheck = textBoxLogin.Text;
             string PasswordCheck = passwordBox1.Password;
             Context context;
+            
         }
     }
 }
