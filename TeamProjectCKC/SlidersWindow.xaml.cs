@@ -28,11 +28,11 @@ namespace TeamProjectCKC
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-
+            //Slider.Value = Предылущее
         }
 
         private void ButtonNext_Click(object sender, RoutedEventArgs e)
-        {
+        {           
             ButtonBack.IsEnabled = true;
             Slider.Value = 50;
             //QuestionLabel.Content = Questions.;
