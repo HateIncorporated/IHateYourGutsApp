@@ -27,11 +27,24 @@ namespace TeamProjectCKC
         }
 
         private void ButtonLoginWindow_Click(object sender, RoutedEventArgs e)
-        {   
-            
+        {            
             string LoginCheck = textBoxLogin.Text;
             string PasswordCheck = passwordBox1.Password;
-            Context context;
+            using (var context = new Context())
+            {
+                if (textBoxLogin.Text == "" ||
+                    passwordBox1.Password == "")
+                {
+                    MessageBox.Show("Please, fill in all the information");
+                }
+                if (AuthorizationLogic.LoginCheking(LoginCheck, PasswordCheck, context.Users))
+                {
+                    MessageBox.Show("Authorization successful!");
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                }
+                
+            }
         }
     }
 }
