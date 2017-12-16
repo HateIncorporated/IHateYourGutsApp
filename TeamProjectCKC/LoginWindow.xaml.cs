@@ -24,9 +24,11 @@ namespace TeamProjectCKC
             InitializeComponent();
         }
 
-        private void buttonLoginWindow_Click(object sender, RoutedEventArgs e)
+        private void ButtonLoginWindow_Click(object sender, RoutedEventArgs e)
         {
-
+            string LoginCheck = textBoxLogin.Text;
+            string PasswordCheck = passwordBox1.Password;
+            string conparms = "Database=MSSQLLLocalDB";
         }
     }
 }

@@ -8,5 +8,7 @@ namespace Logic
 {
     public class AuthorizationLogic
     {
+
     }
 }
+ 

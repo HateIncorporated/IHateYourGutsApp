@@ -29,19 +29,19 @@ namespace TeamProjectCKC
             InitializeComponent();
         }
 
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow login = new LoginWindow();
             login.Show();
             Close();
         }
 
-        private void buttonSubmit_Click(object sender, RoutedEventArgs e)
+        private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
-        private void buttonReset_Click(object sender, RoutedEventArgs e)
+        private void ButtonReset_Click(object sender, RoutedEventArgs e)
         {
             textBoxFirstName.Text = "";
             textBoxLastName.Text = "";
@@ -50,7 +50,7 @@ namespace TeamProjectCKC
             passwordBoxConfirm.Password = "";
         }
 
-        private void buttonCancel_Click(object sender, RoutedEventArgs e)
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
