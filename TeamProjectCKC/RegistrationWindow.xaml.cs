@@ -25,6 +25,7 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class RegistrationWindow : Window
     {
+        private UnitOfWork unitOfWork = new UnitOfWork();
         public RegistrationWindow()
         {
             InitializeComponent();
@@ -55,14 +56,13 @@ namespace TeamProjectCKC
                     return;
                 }
             
-                foreach (var user in context.Users)
-                {
-                    if (user.Login == textBoxLogin.Text)
-                    {
-                        MessageBox.Show("User with such login already exists. Please enter another login.");
-                        return;
-                    }
-                }
+                
+                //if (context.Users.First(x => x.Login == textBoxLogin.Text) != null)
+                //{
+                //    MessageBox.Show("User with such login already exists. Please enter another login.");
+                //    return;
+                //}
+                
                 context.Users.Add(new User
                 {
                     Name = textBoxLastName.Text + " " + textBoxFirstName.Text,

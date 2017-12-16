@@ -11,7 +11,7 @@ namespace LibraryV1
     {
         public Context(): base("IHateYourGutsDB")
         {
-
+            Database.SetInitializer(new IHateYourGutsDBInitializer());
         }
 
         public DbSet<User> Users { get; set; }
