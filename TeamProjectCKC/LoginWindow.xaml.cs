@@ -39,6 +39,7 @@ namespace TeamProjectCKC
                 }
                 if (AuthorizationLogic.LoginCheking(LoginCheck, PasswordCheck, context.Users))
                 {
+                    AuthorizationLogic.GetUser(LoginCheck, context.Users);
                     MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
                     mainWindow.Show();
                     this.Close();
