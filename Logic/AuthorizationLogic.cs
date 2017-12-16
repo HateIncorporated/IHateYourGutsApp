@@ -27,9 +27,9 @@ namespace Logic
             catch (Exception)
             {
                 throw;
-            }
-            
+            }          
         }
+
     }
 }
  

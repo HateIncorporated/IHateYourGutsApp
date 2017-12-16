@@ -119,6 +119,10 @@
       <Project>{0d830c6b-c4aa-4c9e-b8ff-d3e42b2acefd}</Project>
       <Name>LibraryV1</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{f2f44bcd-894c-4132-8e5e-511144fd9175}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
