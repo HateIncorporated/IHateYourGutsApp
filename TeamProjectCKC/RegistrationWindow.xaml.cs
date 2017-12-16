@@ -16,6 +16,7 @@ using System.Data.Entity;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using LibraryV1;
 
 namespace TeamProjectCKC
 {
@@ -38,7 +39,38 @@ namespace TeamProjectCKC
 
         private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
         {
+            using (var context = new Context())
+            {
+                if (textBoxLogin.Text == "" ||
+                    textBoxLastName.Text == "" ||
+                    textBoxFirstName.Text == "" ||
+                    passwordBox.Password == "")
+                {
+                    MessageBox.Show("Please fill all information.");
+                    return;
+                }
+                if (passwordBox.Password != passwordBoxConfirm.Password)
+                {
+                    MessageBox.Show("Passwords do not match.");
+                    return;
+                }
             
+                foreach (var user in context.Users)
+                {
+                    if (user.Login == textBlockLogin.Text)
+                    {
+                        return;
+                    }
+                }
+                context.Users.Add(new User
+                {
+                    Name = textBoxLastName.Text + textBoxFirstName.Text,
+                    Login = textBoxLogin.Text,
+                    Password = passwordBox.Password,
+                });
+
+                context.SaveChanges();
+            }
         }
 
         private void ButtonReset_Click(object sender, RoutedEventArgs e)
