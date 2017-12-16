@@ -14,23 +14,8 @@ namespace LibraryV1
         public int MessageId { get; set; }
         public string MessageText { get; set; }
         
-        public virtual Account SenderAccount { get; set; }
-        public virtual Account RecieverAccount { get; set; }
-    }
-
-    public class Account
-    {
-        public int AccountId { get; set; }
-
-        public string Login { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-
-        [InverseProperty("SenderAccount")]
-        public virtual ICollection<Message> SenderMessage { get; set; }
-
-        [InverseProperty("RecieverAccount")]
-        public virtual ICollection<Message> RecieverMessage { get; set; }
+        public virtual User SenderUser { get; set; }
+        public virtual User RecieverUser { get; set; }
     }
 
 }

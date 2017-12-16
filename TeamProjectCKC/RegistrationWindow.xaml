@@ -12,7 +12,7 @@
 
         <!--Button as a Link button using style-->
 
-        <Button Margin="450,5,12,290" Content="Login" Cursor="Hand" Click="buttonLogin_Click">
+        <Button Margin="450,5,12,290" Content="Login" Cursor="Hand" Click="ButtonLogin_Click">
 
             <Button.Template>
 
@@ -68,7 +68,7 @@
 
             <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,50,0,0" Name="textBlockLastName" Text="Last Name:" VerticalAlignment="Top" Width="110" />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,80,0,0" Name="textBlockEmailId" Text="Login" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,80,0,0" Name="textBlockLogin" Text="Login" VerticalAlignment="Top" Width="110" />
 
             <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,107,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
 
@@ -89,11 +89,11 @@
             <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,107,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222" />
             <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,136,0,0" Name="passwordBoxConfirm" VerticalAlignment="Top" Width="222" />
 
-            <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="183,204,0,0" Name="buttonSubmit" VerticalAlignment="Top" Width="70" Click="buttonSubmit_Click" />
+            <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="183,204,0,0" Name="buttonSubmit" VerticalAlignment="Top" Width="70" Click="ButtonSubmit_Click" />
 
-            <Button Content="Reset" Height="23" HorizontalAlignment="Left" Margin="259,204,0,0" Name="buttonReset" VerticalAlignment="Top" Width="70" Click="buttonReset_Click" />
+            <Button Content="Reset" Height="23" HorizontalAlignment="Left" Margin="259,204,0,0" Name="buttonReset" VerticalAlignment="Top" Width="70" Click="ButtonReset_Click" />
 
-            <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,204,60,0" Name="buttonCancel" VerticalAlignment="Top" Width="70" Click="buttonCancel_Click" />
+            <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,204,60,0" Name="buttonCancel" VerticalAlignment="Top" Width="70" Click="ButtonCancel_Click" />
 
         </Grid>
 
