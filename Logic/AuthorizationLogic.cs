@@ -8,12 +8,8 @@ using LibraryV1;
 namespace Logic
 {
     public class AuthorizationLogic
-    {
-        public string LoginCheck;
-        public string PasswordCheck;
-        List<User> UsersAccounts = new List<User>();
-
-        public bool LoginCheking()
+    {       
+        public static bool LoginCheking(string LoginCheck, string PasswordCheck, List<User> UsersAccounts)
         {
             try
             {
