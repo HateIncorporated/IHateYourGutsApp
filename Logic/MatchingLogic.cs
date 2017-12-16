@@ -10,7 +10,7 @@ namespace Logic
 {
     public class MatchingLogic
     {
-        public int HammingDistance(List<int> list1, List<int> list2)
+        private int HammingDistance(List<int> list1, List<int> list2)
         {
             int distance = 0;
             for (int i = 0; i < list1.Count; i++)
@@ -20,9 +20,20 @@ namespace Logic
             return distance;
         }
 
-        public string FindMatch(int userid, Context context)
+        public int FindMatch(List<int> userAnswers, IEnumerable<User> users)
         {
-
+            int matchedUserId = 0;
+            int maxHammingDistance = 0;
+            foreach(var user in users)
+            {
+                int distance = HammingDistance(userAnswers, user.Answers);
+                if (distance > maxHammingDistance)
+                {
+                    maxHammingDistance = distance;
+                    matchedUserId = user.UserId;
+                }
+            }
+            return matchedUserId;
         }
     }
 }
