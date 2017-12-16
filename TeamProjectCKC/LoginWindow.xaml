@@ -15,7 +15,7 @@
 
         <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,58,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247" />
 
-        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="118,100,0,0" Name="ButtonLoginWindow" VerticalAlignment="Top" Width="104" Click="buttonLoginWindow_Click"/>
+        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="118,100,0,0" Name="ButtonLoginWindow" VerticalAlignment="Top" Width="104" Click="ButtonLoginWindow_Click"/>
 
         <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
 
