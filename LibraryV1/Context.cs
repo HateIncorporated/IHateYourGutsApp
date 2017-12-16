@@ -9,7 +9,7 @@ namespace LibraryV1
 {
     public class Context : DbContext
     {
-        public Context(): base()
+        public Context(): base("IHateYourGutsDB")
         {
 
         }
