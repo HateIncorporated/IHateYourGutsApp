@@ -41,6 +41,7 @@ namespace TeamProjectCKC
                 {
                     MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
                     mainWindow.Show();
+                    this.Close();
                 }
                 else MessageBox.Show("Incorrect User login or password.");
             }
