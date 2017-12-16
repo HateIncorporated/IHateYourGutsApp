@@ -28,6 +28,7 @@ namespace TeamProjectCKC
 
         private void ButtonLoginWindow_Click(object sender, RoutedEventArgs e)
         {   
+            
             string LoginCheck = textBoxLogin.Text;
             string PasswordCheck = passwordBox1.Password;
             Context context;
