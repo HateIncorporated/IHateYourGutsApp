@@ -40,7 +40,7 @@ namespace TeamProjectCKC
                 if (AuthorizationLogic.LoginCheking(LoginCheck, PasswordCheck, context.Users))
                 {
                     MessageBox.Show("Authorization successful!");
-                    MainWindow mainWindow = new MainWindow();
+                    MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
                     mainWindow.Show();
                 }
                 else MessageBox.Show("Incorrect User login or password.");
