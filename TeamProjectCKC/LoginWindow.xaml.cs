@@ -27,7 +27,7 @@ namespace TeamProjectCKC
         }
 
         private void ButtonLoginWindow_Click(object sender, RoutedEventArgs e)
-        {            
+        {          
             string LoginCheck = textBoxLogin.Text;
             string PasswordCheck = passwordBox1.Password;
             using (var context = new Context())
@@ -43,7 +43,7 @@ namespace TeamProjectCKC
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                 }
-                
+                else MessageBox.Show("Incorrect User login or password.");
             }
         }
     }
