@@ -67,11 +67,13 @@ namespace TeamProjectCKC
                 {
                     Name = textBoxLastName.Text + " " + textBoxFirstName.Text,
                     Login = textBoxLogin.Text,
-                    Password = passwordBox.Password,
+                    Password = passwordBox.Password
                 });
-
                 context.SaveChanges();
             }
+            MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
+            mainWindow.Show();
+            this.Close();
         }
 
         private void ButtonReset_Click(object sender, RoutedEventArgs e)

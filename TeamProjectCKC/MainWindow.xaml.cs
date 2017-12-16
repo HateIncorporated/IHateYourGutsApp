@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LibraryV1;
+using Logic;
 
 namespace TeamProjectCKC
 {
@@ -19,8 +21,11 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private User _user;
+        private string _userLogin;
+        public MainWindow(string userLogin)
         {
+            _userLogin = userLogin;
             InitializeComponent();
         }
 
@@ -36,7 +41,10 @@ namespace TeamProjectCKC
 
         private void ButtonMatch_Click(object sender, RoutedEventArgs e)
         {
-
+            using (var context = new Context())
+            {
+                int match = MatchingLogic.FindMatch(_user.Answers, context.Users);
+            }
         }
     }
 }
