@@ -35,7 +35,8 @@
 
     </Window.Resources>
 
-
+    <!--some basic WPF (only XAML) window design solutions are taken from-->
+    <!--http://www.c-sharpcorner.com/UploadFile/prathore/login-and-registration-process-in-wpf-application/-->
     <Grid Height="350" Width="525" >
 
 
@@ -94,9 +95,9 @@
 
             <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,98,0,0" Name="textBlockLogin" Text="Login:" VerticalAlignment="Top" Width="110" />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,124,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,128,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,154,0,0" Name="textBlockConfirmPwd" Text="Confirm Password:" VerticalAlignment="Top" Width="110" Grid.RowSpan="2" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,158,0,0" Name="textBlockConfirmPwd" Text="Confirm Password:" VerticalAlignment="Top" Width="110" Grid.RowSpan="2" />
 
 
 
@@ -110,8 +111,8 @@
 
 
 
-            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,122,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222" />
-            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,151,0,0" Name="passwordBoxConfirm" VerticalAlignment="Top" Width="222" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,125,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,155,0,0" Name="passwordBoxConfirm" VerticalAlignment="Top" Width="222" />
 
             <Button Content="Submit" HorizontalAlignment="Left" Margin="183,204,0,0" Name="buttonSubmit" VerticalAlignment="Top" Click="ButtonSubmit_Click" />
 

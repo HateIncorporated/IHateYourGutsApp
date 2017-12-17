@@ -33,15 +33,15 @@
     
     <Grid>
 
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="LoginHeading" Text="Login from" VerticalAlignment="Top" FontSize="17" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="35,10,0,0" Name="LoginHeading" Text="Login form" VerticalAlignment="Top" FontSize="17" />
 
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="66,40,0,0" Name="textBlock1" Text="Login" VerticalAlignment="Top" Width="67" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="66,45,0,0" Name="textBlock1" Text="Login:" VerticalAlignment="Top" Width="67" />
 
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="58,68,0,0" Name="textBlock2" Text="Password" VerticalAlignment="Top" Width="77" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="58,75,0,0" Name="textBlock2" Text="Password:" VerticalAlignment="Top" Width="77" />
 
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,35,0,0" Name="textBoxLogin" VerticalAlignment="Top" Width="247" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,40,0,0" Name="textBoxLogin" VerticalAlignment="Top" Width="247" />
 
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,68,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,70,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="247" />
 
         <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="118,110,0,0" Name="ButtonLoginWindow" VerticalAlignment="Top" Width="104" Click="ButtonLoginWindow_Click"/>
 
