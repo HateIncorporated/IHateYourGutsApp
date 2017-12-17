@@ -16,6 +16,17 @@ namespace LibraryV1
         public string Password { get; set; }
         public string Answers { get; set; }
 
+        public List<int> GetList()
+        {
+            List<int> answers = new List<int>();
+            char[] s = { ';' };
+            foreach (var number in Answers.Split(s).ToList())
+            {
+                answers.Add(int.Parse(number));
+            }
+            return answers;
+        }
+
         [InverseProperty("SenderUser")]
         public virtual ICollection<Message> SenderMessage { get; set; }
 

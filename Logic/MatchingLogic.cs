@@ -31,13 +31,13 @@ namespace Logic
             return answers;
         }
 
-        /*public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
+        public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
         {
             int matchedUserId = 0;
             int maxHammingDistance = 0;
             foreach(var user in unitOfWork.Users.GetList())
             {
-                int distance = HammingDistance(userAnswers, user.Answers);
+                int distance = HammingDistance(userAnswers, user.GetList());
                 if (distance > maxHammingDistance)
                 {
                     maxHammingDistance = distance;
@@ -45,6 +45,6 @@ namespace Logic
                 }
             }
             return matchedUserId;
-        }*/
+        }
     }
 }

@@ -29,11 +29,6 @@ namespace TeamProjectCKC
             _unitOfWork = new UnitOfWork();
             InitializeComponent();
             TextBlockLoginSpace.Text = _user.Name;
-            var egor = _unitOfWork.Users.First(x => x.Login == "nagibator");
-            foreach (var answer in egor.Answers)
-            {
-                Console.WriteLine(answer);
-            }
         }
 
         private void ButtonQuestions_Click(object sender, RoutedEventArgs e)
