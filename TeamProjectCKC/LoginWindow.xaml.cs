@@ -21,10 +21,10 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private UnitOfWork _unitOfWork;
+        private UnitOfWork _unitOfWork = new UnitOfWork();
         public LoginWindow(UnitOfWork unitOfWork)
         {
-            _unitOfWork = unitOfWork;
+            //_unitOfWork = unitOfWork;
             InitializeComponent();
         }
 

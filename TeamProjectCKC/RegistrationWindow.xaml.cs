@@ -63,14 +63,13 @@ namespace TeamProjectCKC
                     MessageBox.Show("User with such login already exists. Please enter another login.");
                     return;
                 }
-
+                
                 unitOfWork.Users.Add(new User
                 {
                     Name = textBoxLastName.Text + " " + textBoxFirstName.Text,
                     Login = textBoxLogin.Text,
                     Password = passwordBox.Password,
-                    Answers = IHateYourGutsDBInitializer.GenerateAnswers()
-                    
+                    Answers = "50;50;50;50;50;50;50;50;50;50"
                 });
                 unitOfWork.SaveChanges();
                 user = AuthorizationLogic.GetUser(textBoxLogin.Text, unitOfWork);
@@ -91,7 +90,7 @@ namespace TeamProjectCKC
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-            unitOfWork.Dispose();
+            
             Close();
         }
     }
