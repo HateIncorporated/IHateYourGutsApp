@@ -58,11 +58,11 @@ namespace TeamProjectCKC
                 }
             
                 
-                //if (context.Users.First(x => x.Login == textBoxLogin.Text) != null)
-                //{
-                //    MessageBox.Show("User with such login already exists. Please enter another login.");
-                //    return;
-                //}
+                if (unitOfWork.Users.First(x => x.Login == textBoxLogin.Text) != null)
+                {
+                    MessageBox.Show("User with such login already exists. Please enter another login.");
+                    return;
+                }
                 
                 unitOfWork.Users.Add(new User
                 {
