@@ -68,7 +68,8 @@ namespace TeamProjectCKC
                 {
                     Name = textBoxLastName.Text + " " + textBoxFirstName.Text,
                     Login = textBoxLogin.Text,
-                    Password = passwordBox.Password
+                    Password = passwordBox.Password,
+                    Answers = "50;50;50;50;50;50;50;50;50;50"
                 });
                 unitOfWork.SaveChanges();
                 user = AuthorizationLogic.GetUser(textBoxLogin.Text, unitOfWork);
@@ -89,7 +90,7 @@ namespace TeamProjectCKC
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-            unitOfWork.Dispose();
+            
             Close();
         }
     }
