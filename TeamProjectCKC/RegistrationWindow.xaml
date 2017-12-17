@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeamProjectCKC"
         mc:Ignorable="d"
-        Title="Registration" Height="387" Width="528" Background="White" Icon="/Resources/Angery.png">
+        Title="Registration" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="387" Width="528" Background="White" Icon="/Resources/Angery.png">
 
     <Window.Resources>
         <!--Button Styling-->
@@ -36,7 +36,7 @@
     </Window.Resources>
 
 
-    <Grid  Height="350" Width="525" >
+    <Grid Height="350" Width="525" >
 
 
         <Image Margin="55 10" Height="43" Width="43" 
@@ -50,42 +50,26 @@
 
         <Label Margin="224 22" FontFamily="Tw Cen MT" FontSize="18" HorizontalAlignment="Left"  VerticalAlignment="Top">the app</Label>
 
-        <Button Margin="450,5,12,290" Content="Login" Cursor="Hand" Click="ButtonLogin_Click">
+        <Button Width="45" Height="25" Margin="450,5,12,290" Content="Login" Cursor="Hand" Click="ButtonLogin_Click">
 
             <Button.Template>
-
                 <ControlTemplate TargetType="Button">
-
                     <TextBlock TextDecorations="Underline">
-
                     <ContentPresenter />
-
                     </TextBlock>
-
                 </ControlTemplate>
-
             </Button.Template>
-
+            
             <Button.Style>
-
                 <Style TargetType="Button">
-
                     <Setter Property="Foreground" Value="Navy" />
-
                     <Style.Triggers>
-
                         <Trigger Property="IsMouseOver" Value="true">
-
                             <Setter Property="Foreground" Value="Red" />
-
                         </Trigger>
-
                     </Style.Triggers>
-
                 </Style>
-
             </Button.Style>
-
         </Button>
 
         <!--end Button as a Link button using style-->

@@ -5,21 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeamProjectCKC"
         mc:Ignorable="d"
-        Title="Time for questions!" Height="200" Width="300">
+        Title="Time for questions!" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="200" Width="300" Icon="/Resources/Angery.png">
 
     <Window.Resources>
         <!--Button Styling-->
         <Style TargetType="Button">
             <Setter Property="Background" Value="#EE5767"/>
             <Setter Property="Foreground" Value="White" />
-            <Setter Property="Height" Value="30" />
+            <Setter Property="Height" Value="20" />
             <Setter Property="BorderThickness"  Value="0"/>
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="Width" Value="70"/>
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="Width" Value="40"/>
             <Setter Property="FontFamily" Value="Tw Cen MT" />
         </Style>
 
-        
+        <!--TextBlock font sizer increaser-->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        </Style>
+
+        <!--Label styler-->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        </Style>
 
 
         <!--TextBox styler-->
@@ -33,11 +43,11 @@
 
 
     <StackPanel>
-        <Label FontSize="15">Choose the values that suit you!</Label>
-        <Label Margin="0 0 0 10" FontSize="10">"0" is strong disagreement and "100" is strong agreement</Label>
+        <Label FontSize="15">Choose the values that suit you best</Label>
+        <Label Margin="0 0 0 10" FontSize="12">"0" is strong disagreement and "100" is strong agreement</Label>
         
         <!--1-->
-        <Label FontSize="10" Name="QuestionLabel" Content="Question number 1"/>
+        <Label FontSize="12" Name="QuestionLabel" Content="Question number 1"/>
         <Slider Name="Slider" Margin="18 0 28 0" Foreground="Blue"
         Minimum="0" Maximum="100"
         TickPlacement="BottomRight"
@@ -50,9 +60,9 @@
         </StackPanel>
 
         <Grid>
-            <Button HorizontalAlignment="Left"  Width="30" Height="10" Margin="9" Name="ButtonBack" Content="Back" FontSize="5" Click="ButtonBack_Click" IsEnabled="False"></Button>
+            <Button HorizontalAlignment="Left"   Margin="9" Name="ButtonBack" Content="Back"  Click="ButtonBack_Click" IsEnabled="False"></Button>
 
-            <Button HorizontalAlignment="Right" Width="30" Height="10" Margin="9" Name="ButtonNext" Content="Next" FontSize="5" Click="ButtonNext_Click"></Button>
+            <Button HorizontalAlignment="Right"  Margin="9" Name="ButtonNext" Content="Next"  Click="ButtonNext_Click"></Button>
         </Grid>
                
     </StackPanel>
