@@ -20,7 +20,7 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class SlidersWindow : Window
     {
-        Questions Qinfo = new Questions();
+ 
         public SlidersWindow()
         {
             InitializeComponent();
