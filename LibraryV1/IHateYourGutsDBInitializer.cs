@@ -42,7 +42,7 @@ namespace LibraryV1
             base.Seed(context);
         }
 
-        private String GenerateAnswers()
+        public static String GenerateAnswers()
         {
             string strAnswers = "";
             List<int> answers = new List<int>();

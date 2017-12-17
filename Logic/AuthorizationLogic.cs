@@ -22,8 +22,9 @@ namespace Logic
                 }
                 else return false;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                
                 return false;
             }          
         }

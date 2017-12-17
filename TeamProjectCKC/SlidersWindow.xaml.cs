@@ -43,8 +43,9 @@ namespace TeamProjectCKC
         {
             if (_totalQuestions == _questionCounter)
             {
-
+                string _strUsersAnswers = string.Join(";", _userAnswers);              
             }
+            else
             _questionCounter++;
             ButtonBack.IsEnabled = true;
             UpdateWindow();
