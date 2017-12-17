@@ -28,9 +28,9 @@ namespace Logic
             }          
         }
        
-        public static User GetUser(string LoginCheck, DbSet<User> UsersAccounts)
+        public static User GetUser(string LoginCheck, UnitOfWork unitOfWork)
         {
-            return UsersAccounts.FirstOrDefault(x => x.Login == LoginCheck);
+            return unitOfWork.Users.First(x => x.Login == LoginCheck);
         }
 
         public static bool LoginExists(string login, UnitOfWork unitOfWork)
