@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LibraryV1;
 
 namespace TeamProjectCKC
 {
@@ -19,9 +20,22 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class SlidersWindow : Window
     {
+        Questions Qinfo = new Questions();
         public SlidersWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            //Slider.Value = Предылущее
+        }
+
+        private void ButtonNext_Click(object sender, RoutedEventArgs e)
+        {           
+            ButtonBack.IsEnabled = true;
+            Slider.Value = 50;
+            //QuestionLabel.Content = Questions.;
         }
     }
 }
