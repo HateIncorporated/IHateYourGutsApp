@@ -5,12 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeamProjectCKC"
         mc:Ignorable="d"
-        Title="Registration" Height="387" Width="528" Background="Azure">
-    <Grid  Height="350" Width="525" Background="LightCoral">
+        Title="Registration" Height="387" Width="528" Background="White" Icon="/Resources/Angery.png">
 
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" Name="textBlockHeading" Text="Registration:" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"/>
+    <Window.Resources>
+        <!--Button Styling-->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#EE5767"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT" />
+        </Style>
+        
+        <!--TextBlock font sizer increaser-->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        </Style>
 
-        <!--Button as a Link button using style-->
+       
+        <!--TextBox styler-->
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+    </Window.Resources>
+
+
+    <Grid  Height="350" Width="525" >
+
+
+        <Image Margin="55 10" Height="43" Width="43" 
+               HorizontalAlignment="Left"  VerticalAlignment="Top">
+            <Image.Source>
+                <BitmapImage UriSource="/Resources/Angery.png" />
+            </Image.Source>
+        </Image>
+
+        <Label Foreground="#EE5767" Margin="98 8" FontFamily="Tw Cen MT" FontSize="34" HorizontalAlignment="Left"  VerticalAlignment="Top">HateYou</Label>
+
+        <Label Margin="224 22" FontFamily="Tw Cen MT" FontSize="18" HorizontalAlignment="Left"  VerticalAlignment="Top">the app</Label>
 
         <Button Margin="450,5,12,290" Content="Login" Cursor="Hand" Click="ButtonLogin_Click">
 
@@ -62,38 +100,40 @@
 
             </Grid.RowDefinitions>
 
-            <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+            <Label  Margin="28 0" FontSize="18" FontFamily="Tw Cen MT">Registration form</Label>
+            
+            <TextBlock Height="20" HorizontalAlignment="Left" Margin="187,8,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,20,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,38,0,0" Name="textBlockFirstname" Text="First Name:" VerticalAlignment="Top" Width="110" />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,50,0,0" Name="textBlockLastName" Text="Last Name:" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,68,0,0" Name="textBlockLastName" Text="Last Name:" VerticalAlignment="Top" Width="110" />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,80,0,0" Name="textBlockLogin" Text="Login" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,98,0,0" Name="textBlockLogin" Text="Login:" VerticalAlignment="Top" Width="110" />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,107,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,124,0,0" Name="textBlockPassword" Text="Password:" VerticalAlignment="Top" Width="110"  />
 
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,136,0,0" Name="textBlockConfirmPwd" Text="Confirm Password:" VerticalAlignment="Top" Width="110" Grid.RowSpan="2" />
-
-
-
-
-
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,20,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222" />
-
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,50,0,0" Name="textBoxLastName" VerticalAlignment="Top" Width="222" />
-
-            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,80,0,0" Name="textBoxLogin" VerticalAlignment="Top" Width="222" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="67,154,0,0" Name="textBlockConfirmPwd" Text="Confirm Password:" VerticalAlignment="Top" Width="110" Grid.RowSpan="2" />
 
 
 
-            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,107,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222" />
-            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,136,0,0" Name="passwordBoxConfirm" VerticalAlignment="Top" Width="222" />
 
-            <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="183,204,0,0" Name="buttonSubmit" VerticalAlignment="Top" Width="70" Click="ButtonSubmit_Click" />
 
-            <Button Content="Reset" Height="23" HorizontalAlignment="Left" Margin="259,204,0,0" Name="buttonReset" VerticalAlignment="Top" Width="70" Click="ButtonReset_Click" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,35,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222" />
 
-            <Button Content="Cancel" Height="23" HorizontalAlignment="Right" Margin="0,204,60,0" Name="buttonCancel" VerticalAlignment="Top" Width="70" Click="ButtonCancel_Click" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,65,0,0" Name="textBoxLastName" VerticalAlignment="Top" Width="222" />
+
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,95,0,0" Name="textBoxLogin" VerticalAlignment="Top" Width="222" />
+
+
+
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,122,0,0" Name="passwordBox" VerticalAlignment="Top" Width="222" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,151,0,0" Name="passwordBoxConfirm" VerticalAlignment="Top" Width="222" />
+
+            <Button Content="Submit" HorizontalAlignment="Left" Margin="183,204,0,0" Name="buttonSubmit" VerticalAlignment="Top" Click="ButtonSubmit_Click" />
+
+            <Button Content="Reset" HorizontalAlignment="Left" Margin="259,204,0,0" Name="buttonReset" VerticalAlignment="Top"  Click="ButtonReset_Click" />
+
+            <Button Content="Cancel" HorizontalAlignment="Right" Margin="0,204,60,0" Name="buttonCancel" VerticalAlignment="Top"  Click="ButtonCancel_Click" />
 
         </Grid>
 

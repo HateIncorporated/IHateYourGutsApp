@@ -3,9 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Login" Height="210" Width="440">
 
+    <Window.Resources>
+        <!--Button Styling-->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#EE5767"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT" />
+        </Style>
+
+        <!--TextBlock font sizer increaser-->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        </Style>
+
+
+        <!--TextBox styler-->
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+    </Window.Resources>
+    
     <Grid>
 
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="LoginHeading" Text="Login:" VerticalAlignment="Top" FontSize="17" FontStretch="ExtraCondensed"/>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="LoginHeading" Text="Login:" VerticalAlignment="Top" FontSize="17" />
 
         <TextBlock Height="23" HorizontalAlignment="Left" Margin="66,30,0,0" Name="textBlock1" Text="Login" VerticalAlignment="Top" Width="67" />
 
