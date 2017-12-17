@@ -40,5 +40,10 @@ namespace LibraryV1
         {
             return _context.Set<T>().Count();
         }
+
+        public List<T> GetList()
+        {
+            return _context.Set<T>().ToList<T>();
+        }
     }
 }
