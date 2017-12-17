@@ -26,7 +26,7 @@ namespace TeamProjectCKC
         public MainWindow(User user, UnitOfWork unitOfWork)
         {
             _user = user;
-            _unitOfWork = new UnitOfWork();
+            
             InitializeComponent();
             TextBlockLoginSpace.Text = _user.Name;
         }
@@ -48,12 +48,14 @@ namespace TeamProjectCKC
         private void ButtonMatch_Click(object sender, RoutedEventArgs e)
         {
             int match;
-            using (_unitOfWork)
+            string name;
+            using (_unitOfWork = new UnitOfWork())
             {
-            //    match = MatchingLogic.FindMatch(_user.Answers, _unitOfWork);
+                match = MatchingLogic.FindMatch(_user.GetList(), _unitOfWork);
+                name = _unitOfWork.Users.First(x => x.UserId == match).Name;
             }
-            
-            //MessageBox.Show($"You are mathced with {match}");
+
+            MessageBox.Show($"You are mathced with {name}");
         }
     }
 }

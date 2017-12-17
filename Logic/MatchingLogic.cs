@@ -31,20 +31,42 @@ namespace Logic
             return answers;
         }
 
-        public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
+        /*public static User FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
         {
-            int matchedUserId = 0;
+            User matchedUser = new User() {Name="", UserId=0 };
+            string name = "";
             int maxHammingDistance = 0;
             foreach(var user in unitOfWork.Users.GetList())
             {
                 int distance = HammingDistance(userAnswers, user.GetList());
                 if (distance > maxHammingDistance)
                 {
+                    name = user.Name;
                     maxHammingDistance = distance;
-                    matchedUserId = user.UserId;
+                    matchedUser.Name = user.Name;
+                    matchedUser.UserId = user.UserId;
                 }
             }
-            return matchedUserId;
+            Console.WriteLine(name);
+            return matchedUser;
+        }*/
+
+        public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
+        {
+            
+                int matchedUserId = 0;
+                int maxHammingDistance = 0;
+                foreach (var user in unitOfWork.Users.GetList())
+                {
+                    int distance = HammingDistance(userAnswers, user.GetList());
+                    if (distance > maxHammingDistance)
+                    {
+                        maxHammingDistance = distance;
+                        matchedUserId = user.UserId;
+                    }
+                }
+                return matchedUserId;
+            
         }
     }
 }
