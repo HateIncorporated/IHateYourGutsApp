@@ -20,6 +20,17 @@ namespace Logic
             return distance;
         }
 
+        public static List<int> GetListFromAnswers(string str)
+        {
+            List<int> answers = new List<int>();
+            char[] s = {';'};
+            foreach (var number in str.Split(s).ToList())
+            {
+                answers.Add(int.Parse(number));
+            }
+            return answers;
+        }
+
         /*public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
         {
             int matchedUserId = 0;
