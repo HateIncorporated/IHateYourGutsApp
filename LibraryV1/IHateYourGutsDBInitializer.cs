@@ -15,7 +15,7 @@ namespace LibraryV1
             List<Question> defaultQuestions = new List<Question>();
             
             defaultUsers.Add(new User() { Name = "Chernakov Egor", Login = "nagibator", Password = "1234", Answers = GenerateAnswers() });
-            defaultUsers.Add(new User() { Name = "Korneev Grisha", Login = "natsuki_lover", Password = "iLoveProgramming", Answers = GenerateAnswers() });
+            defaultUsers.Add(new User() { Name = "Korneev Gosha", Login = "natsuki_lover", Password = "iLoveProgramming", Answers = GenerateAnswers() });
             defaultUsers.Add(new User() { Name = "Churilov Arseniy", Login = "helwy", Password = "izi10", Answers = GenerateAnswers() });
             defaultUsers.Add(new User() { Name = "Ivan Ivanov", Login = "IvanovIvanIvanovich", Password = "pass", Answers = GenerateAnswers() });
             defaultUsers.Add(new User() { Name = "John Doe", Login = "JDoeRealPersonNotSeeded", Password = "pass", Answers = GenerateAnswers() });
