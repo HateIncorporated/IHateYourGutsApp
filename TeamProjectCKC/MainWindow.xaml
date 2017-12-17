@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TeamProjectCKC"
         mc:Ignorable="d"
-        Title="Account Details" Height="300" Width="300">
+        Title="Account Details" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Height="240" Width="350" Icon="/Resources/Angery.png">
 
     <Window.Resources>
         <!--Button Styling-->
@@ -25,6 +25,11 @@
             <Setter Property="FontFamily" Value="Tw Cen MT"/>
         </Style>
 
+        <!--Label styler-->
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        </Style>
 
         <!--TextBox styler-->
         <Style TargetType="TextBox">
@@ -35,28 +40,61 @@
 
     </Window.Resources>
 
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
-        <Button  Name="ButtonLogOut" Click="ButtonLogOut_Click">Log Out</Button>
+
+            <Button Width="45" Height="25" Margin="10 5" Name="ButtonLogOut" Click="ButtonLogOut_Click" Cursor="Hand" Content="Log Out">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <TextBlock TextDecorations="Underline">
+                    <ContentPresenter />
+                        </TextBlock>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Foreground" Value="Navy" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Foreground" Value="Red" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            
         </StackPanel>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
+            <Image Margin="10 5 0 0" Height="26" Width="26" 
+               HorizontalAlignment="Left"  VerticalAlignment="Top">
+                <Image.Source>
+                    <BitmapImage UriSource="/Resources/Angery.png" />
+                </Image.Source>
+            </Image>
+
+            <Label Foreground="#EE5767" Margin="0" FontFamily="Tw Cen MT" FontSize="26" HorizontalAlignment="Left"  VerticalAlignment="Top">HateYou</Label>
+            </StackPanel>
+
+            <StackPanel Margin="10 0 0 0" Orientation="Horizontal">
                 <Label FontSize="14" Content="Welcome," />
                 <!--name of a person who is using the account goes here-->
                 <TextBlock Name="TextBlockLoginSpace" IsEnabled="False" FontSize="14" Text="USERNAME" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </StackPanel>
-            <Button Margin="10"  Name="ButtonQuestions" Click="ButtonQuestions_Click">Questions</Button>
-            <Button Margin="10"  Name="ButtonMatch" Click="ButtonMatch_Click">Match Me!</Button>
+            </StackPanel >
             <StackPanel Orientation="Horizontal">
-                <Label FontSize="14" Content="Has taken the questions?" />
+                <Button Margin="10" Width="100" Name="ButtonQuestions" Click="ButtonQuestions_Click">Take the quiz</Button>
+                <Button Margin="10" Width="100" Name="ButtonMatch" Click="ButtonMatch_Click">Match Me!</Button>
+        </StackPanel>
+            <StackPanel Margin="10 0 0 0" Orientation="Horizontal">
+                <Label FontSize="14" Content="Has taken the quiz before?" />
                 <!--change the value of this TextBlock if the questions are taken-->
                 <TextBlock Name="TextBlockQuestionsTaken" IsEnabled="False" FontSize="14" Text="No" VerticalAlignment="Center" HorizontalAlignment="Center"/> 
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="10 0 0 0" Orientation="Horizontal">
                 <Label FontSize="14" Content="Currently matched with:" />
                 <!--name of the match goes here-->
                 <TextBlock Name="TextBlockMatchName" IsEnabled="False" FontSize="14" Text="No-one!" VerticalAlignment="Center" HorizontalAlignment="Center"/>
