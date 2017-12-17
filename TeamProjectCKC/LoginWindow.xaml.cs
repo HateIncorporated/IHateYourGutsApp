@@ -30,16 +30,16 @@ namespace TeamProjectCKC
         {          
             string LoginCheck = textBoxLogin.Text;
             string PasswordCheck = passwordBox1.Password;
-            using (var context = new Context())
+            using (var unitOfWork = new UnitOfWork())
             {
                 if (textBoxLogin.Text == "" ||
                     passwordBox1.Password == "")
                 {
                     MessageBox.Show("Please, fill in all the information");
                 }
-                if (AuthorizationLogic.LoginCheking(LoginCheck, PasswordCheck, context.Users))
+                if (AuthorizationLogic.LoginCheking(LoginCheck, PasswordCheck, unitOfWork))
                 {
-                    AuthorizationLogic.GetUser(LoginCheck, context.Users);
+                    AuthorizationLogic.GetUser(LoginCheck, unitOfWork);
                     MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
                     mainWindow.Show();
                     this.Close();
