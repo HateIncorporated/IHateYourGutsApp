@@ -21,8 +21,10 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+        private UnitOfWork _unitOfWork;
+        public LoginWindow(UnitOfWork unitOfWork)
         {
+            _unitOfWork = unitOfWork;
             InitializeComponent();
         }
 
@@ -30,17 +32,17 @@ namespace TeamProjectCKC
         {          
             string LoginCheck = textBoxLogin.Text;
             string PasswordCheck = passwordBox1.Password;
-            using (var context = new Context())
+            using (_unitOfWork)
             {
                 if (textBoxLogin.Text == "" ||
                     passwordBox1.Password == "")
                 {
                     MessageBox.Show("Please, fill in all the information");
                 }
-                if (AuthorizationLogic.LoginCheking(LoginCheck, PasswordCheck, context.Users))
+                if (AuthorizationLogic.LoginCheking(LoginCheck, PasswordCheck, _unitOfWork))
                 {
-                    AuthorizationLogic.GetUser(LoginCheck, context.Users);
-                    MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
+                    AuthorizationLogic.GetUser(LoginCheck, _unitOfWork);
+                    MainWindow mainWindow = new MainWindow(AuthorizationLogic.GetUser(LoginCheck, _unitOfWork), _unitOfWork);
                     mainWindow.Show();
                     this.Close();
                 }

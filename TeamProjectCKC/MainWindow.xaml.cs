@@ -22,11 +22,13 @@ namespace TeamProjectCKC
     public partial class MainWindow : Window
     {
         private User _user;
-        private string _userLogin;
-        public MainWindow(string userLogin)
+        private UnitOfWork _unitOfWork;
+        public MainWindow(User user, UnitOfWork unitOfWork)
         {
-            _userLogin = userLogin;
+            _user = user;
+            _unitOfWork = unitOfWork;
             InitializeComponent();
+            TextBlockLoginSpace.Text = _user.Name;
         }
 
         private void ButtonQuestions_Click(object sender, RoutedEventArgs e)
@@ -36,17 +38,19 @@ namespace TeamProjectCKC
 
         private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow logwindow = new LoginWindow();
+            LoginWindow logwindow = new LoginWindow(_unitOfWork);
             logwindow.Show();
             this.Close();
         }
 
         private void ButtonMatch_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new Context())
+            int match;
+            using (_unitOfWork)
             {
-                int match = MatchingLogic.FindMatch(_user.Answers, context.Users);
+                match = MatchingLogic.FindMatch(_user.Answers, _unitOfWork);
             }
+            MessageBox.Show($"You are mathced with {match}");
         }
     }
 }
