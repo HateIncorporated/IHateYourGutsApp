@@ -33,7 +33,9 @@ namespace TeamProjectCKC
 
         private void ButtonQuestions_Click(object sender, RoutedEventArgs e)
         {
-
+            SlidersWindow sliderwindow = new SlidersWindow(_unitOfWork);
+            sliderwindow.Show();
+            this.Close();
         }
 
         private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
