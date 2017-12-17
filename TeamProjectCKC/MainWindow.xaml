@@ -6,13 +6,42 @@
         xmlns:local="clr-namespace:TeamProjectCKC"
         mc:Ignorable="d"
         Title="Account Details" Height="300" Width="300">
+
+    <Window.Resources>
+        <!--Button Styling-->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#EE5767"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="BorderThickness"  Value="0"/>
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Width" Value="70"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT" />
+        </Style>
+
+        <!--TextBlock font sizer increaser-->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+        </Style>
+
+
+        <!--TextBox styler-->
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="FontFamily" Value="Tw Cen MT"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="8*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
-        <Button Padding="0 10 0 10" Name="ButtonLogOut" Click="ButtonLogOut_Click">Log Out</Button>
+        <Button  Name="ButtonLogOut" Click="ButtonLogOut_Click">Log Out</Button>
         </StackPanel>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
@@ -20,8 +49,8 @@
                 <!--name of a person who is using the account goes here-->
                 <TextBlock Name="TextBlockLoginSpace" IsEnabled="False" FontSize="14" Text="USERNAME" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
-            <Button Margin="10" Padding="0 15 0 15" Name="ButtonQuestions" Click="ButtonQuestions_Click">Questions</Button>
-            <Button Margin="10" Padding="0 15 0 15" Name="ButtonMatch" Click="ButtonMatch_Click">Match Me!</Button>
+            <Button Margin="10"  Name="ButtonQuestions" Click="ButtonQuestions_Click">Questions</Button>
+            <Button Margin="10"  Name="ButtonMatch" Click="ButtonMatch_Click">Match Me!</Button>
             <StackPanel Orientation="Horizontal">
                 <Label FontSize="14" Content="Has taken the questions?" />
                 <!--change the value of this TextBlock if the questions are taken-->
