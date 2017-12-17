@@ -38,7 +38,7 @@ namespace TeamProjectCKC
 
         private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow logwindow = new LoginWindow();
+            LoginWindow logwindow = new LoginWindow(_unitOfWork);
             logwindow.Show();
             this.Close();
         }
