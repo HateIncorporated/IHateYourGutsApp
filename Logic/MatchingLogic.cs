@@ -20,11 +20,11 @@ namespace Logic
             return distance;
         }
 
-        public static int FindMatch(List<int> userAnswers, IEnumerable<User> users)
+        public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
         {
             int matchedUserId = 0;
             int maxHammingDistance = 0;
-            foreach(var user in users)
+            foreach(var user in unitOfWork.Users.Where(x => true))
             {
                 int distance = HammingDistance(userAnswers, user.Answers);
                 if (distance > maxHammingDistance)

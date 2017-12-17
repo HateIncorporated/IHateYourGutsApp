@@ -22,12 +22,12 @@ namespace TeamProjectCKC
     public partial class MainWindow : Window
     {
         private User _user;
-        private string _userLogin;
         private UnitOfWork _unitOfWork;
         public MainWindow(User user, UnitOfWork unitOfWork)
         {
             _user = user;
             _unitOfWork = unitOfWork;
+            TextBlockLoginSpace.Text = _user.Name;
             InitializeComponent();
         }
 
@@ -45,10 +45,12 @@ namespace TeamProjectCKC
 
         private void ButtonMatch_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new Context())
+            int match;
+            using (_unitOfWork)
             {
-                int match = MatchingLogic.FindMatch(_user.Answers, context.Users);
+                match = MatchingLogic.FindMatch(_user.Answers, _unitOfWork);
             }
+            MessageBox.Show($"You are mathced with {match}");
         }
     }
 }
