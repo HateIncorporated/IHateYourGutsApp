@@ -12,5 +12,6 @@ namespace LibraryV1
         public string QuestionText { get; set; }
         public int Answer { get; set; }
 
+        public virtual ICollection<User> Users { get; set; }
     }
 }

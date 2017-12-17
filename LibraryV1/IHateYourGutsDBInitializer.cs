@@ -42,15 +42,17 @@ namespace LibraryV1
             base.Seed(context);
         }
 
-        private List<int> GenerateAnswers()
+        private String GenerateAnswers()
         {
-            Random random = new Random();
+            string strAnswers = "";
             List<int> answers = new List<int>();
+            Random random = new Random();
             for (int i = 0; i < 10; i++)
             {
                 answers.Add(random.Next(0, 100));
             }
-            return answers;
+            strAnswers = string.Join(";", answers);
+            return strAnswers;
         }
     }
 }

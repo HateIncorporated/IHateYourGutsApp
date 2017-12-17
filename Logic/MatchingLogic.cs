@@ -20,7 +20,7 @@ namespace Logic
             return distance;
         }
 
-        public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
+        /*public static int FindMatch(List<int> userAnswers, UnitOfWork unitOfWork)
         {
             int matchedUserId = 0;
             int maxHammingDistance = 0;
@@ -34,6 +34,6 @@ namespace Logic
                 }
             }
             return matchedUserId;
-        }
+        }*/
     }
 }
