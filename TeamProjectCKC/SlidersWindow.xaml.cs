@@ -20,22 +20,48 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class SlidersWindow : Window
     {
- 
-        public SlidersWindow()
+        private UnitOfWork _unitOfWork;
+        private int _questionCounter = 1;
+        private List<int> _userAnswers;
+        private int _totalQuestions;
+
+        public SlidersWindow(UnitOfWork unitOfWork)
         {
-            InitializeComponent();
+            _unitOfWork = unitOfWork;
+            _totalQuestions = _unitOfWork.Questions.Count();
+            UpdateWindow();
+            InitializeComponent();           
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
         {
-            //Slider.Value = Предылущее
+            _questionCounter--;
+            UpdateWindow();
         }
 
         private void ButtonNext_Click(object sender, RoutedEventArgs e)
-        {           
+        {
+            if (_totalQuestions == _questionCounter)
+            {
+
+            }
+            _questionCounter++;
             ButtonBack.IsEnabled = true;
-            Slider.Value = 50;
-            //QuestionLabel.Content = Questions.;
+            UpdateWindow();           
+            
+        }
+
+        private void UpdateWindow()
+        {
+            var Question = _unitOfWork.Questions.First(x => x.QuestionId == _questionCounter);
+            QuestionLabel.Content = Question.QuestionText;
+            Slider.Value = Question.Answer;
+            _userAnswers.Add(Question.Answer);
+            if (_totalQuestions == _questionCounter)
+            {
+                ButtonNext.Content = "Done";
+            }
+            else ButtonNext.Content = "Next";
         }
     }
 }
