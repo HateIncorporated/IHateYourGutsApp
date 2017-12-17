@@ -34,7 +34,7 @@ namespace TeamProjectCKC
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow login = new LoginWindow();
+            LoginWindow login = new LoginWindow(unitOfWork);
             login.Show();
             Close();
         }

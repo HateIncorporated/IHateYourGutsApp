@@ -27,8 +27,8 @@ namespace TeamProjectCKC
         {
             _user = user;
             _unitOfWork = unitOfWork;
-            TextBlockLoginSpace.Text = _user.Name;
             InitializeComponent();
+            TextBlockLoginSpace.Text = _user.Name;
         }
 
         private void ButtonQuestions_Click(object sender, RoutedEventArgs e)
