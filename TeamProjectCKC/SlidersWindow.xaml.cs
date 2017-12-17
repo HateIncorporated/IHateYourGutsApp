@@ -30,7 +30,7 @@ namespace TeamProjectCKC
             _unitOfWork = unitOfWork;
             _totalQuestions = _unitOfWork.Questions.Count();
             UpdateWindow();
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         private void ButtonBack_Click(object sender, RoutedEventArgs e)
@@ -47,8 +47,8 @@ namespace TeamProjectCKC
             }
             _questionCounter++;
             ButtonBack.IsEnabled = true;
-            UpdateWindow();           
-            
+            UpdateWindow();
+
         }
 
         private void UpdateWindow()
@@ -63,5 +63,6 @@ namespace TeamProjectCKC
             }
             else ButtonNext.Content = "Next";
         }
+
     }
 }
