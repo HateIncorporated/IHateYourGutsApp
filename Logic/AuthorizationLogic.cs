@@ -27,7 +27,7 @@ namespace Logic
                 return false;
             }          
         }
-        //user po loginu
+       
         public static User GetUser(string LoginCheck, DbSet<User> UsersAccounts)
         {
             return UsersAccounts.FirstOrDefault(x => x.Login == LoginCheck);
