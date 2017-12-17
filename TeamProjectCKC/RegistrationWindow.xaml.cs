@@ -16,7 +16,7 @@ using System.Data.Entity;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using LibraryV1;
+using Logic;
 
 namespace TeamProjectCKC
 {
@@ -41,6 +41,7 @@ namespace TeamProjectCKC
 
         private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
         {
+            User user;
             using (unitOfWork)
             {
                 if (textBoxLogin.Text == "" ||
@@ -55,10 +56,9 @@ namespace TeamProjectCKC
                 {
                     MessageBox.Show("Passwords do not match.");
                     return;
-                }
-            
+                }            
                 
-                if (unitOfWork.Users.First(x => x.Login == textBoxLogin.Text) != null)
+                if (AuthorizationLogic.LoginExists(textBoxLogin.Text, unitOfWork))
                 {
                     MessageBox.Show("User with such login already exists. Please enter another login.");
                     return;
@@ -71,8 +71,9 @@ namespace TeamProjectCKC
                     Password = passwordBox.Password
                 });
                 unitOfWork.SaveChanges();
+                user = AuthorizationLogic.GetUser(textBoxLogin.Text, unitOfWork);
             }
-            MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
+            MainWindow mainWindow = new MainWindow(user, unitOfWork);
             mainWindow.Show();
             this.Close();
         }
@@ -88,6 +89,7 @@ namespace TeamProjectCKC
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
+            unitOfWork.Dispose();
             Close();
         }
     }

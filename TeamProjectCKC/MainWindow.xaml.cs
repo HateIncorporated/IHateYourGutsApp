@@ -23,9 +23,11 @@ namespace TeamProjectCKC
     {
         private User _user;
         private string _userLogin;
-        public MainWindow(string userLogin)
+        private UnitOfWork _unitOfWork;
+        public MainWindow(User user, UnitOfWork unitOfWork)
         {
-            _userLogin = userLogin;
+            _user = user;
+            _unitOfWork = unitOfWork;
             InitializeComponent();
         }
 

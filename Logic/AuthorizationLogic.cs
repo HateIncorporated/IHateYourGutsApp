@@ -11,11 +11,11 @@ namespace Logic
 {
     public class AuthorizationLogic
     {       
-        public static bool LoginCheking(string LoginCheck, string PasswordCheck, DbSet<User> UsersAccounts)
+        public static bool LoginCheking(string LoginCheck, string PasswordCheck, UnitOfWork unitOfWork)
         {
             try
             {
-                var User = UsersAccounts.First(x => x.Login == LoginCheck);
+                var User = unitOfWork.Users.First(x => x.Login == LoginCheck);
                 if (User.Password == PasswordCheck)
                 {
                     return true;
@@ -33,6 +33,10 @@ namespace Logic
             return UsersAccounts.FirstOrDefault(x => x.Login == LoginCheck);
         }
 
+        public static bool LoginExists(string login, UnitOfWork unitOfWork)
+        {
+            return unitOfWork.Users.First(x => x.Login == login) != null;
+        }
     }
 }
  
