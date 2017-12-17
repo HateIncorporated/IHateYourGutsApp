@@ -35,5 +35,10 @@ namespace LibraryV1
         {
             return _context.Set<T>().Where(predicate);
         }
+
+        public int Count()
+        {
+            return _context.Set<T>().Count();
+        }
     }
 }
