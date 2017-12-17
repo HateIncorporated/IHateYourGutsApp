@@ -47,5 +47,12 @@ namespace TeamProjectCKC
                 else MessageBox.Show("Incorrect User login or password.");
             }
         }
+
+        private void ButtonRegisterLoginWindow_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registration = new RegistrationWindow();
+            registration.Show();
+            this.Close();
+        }
     }
 }
