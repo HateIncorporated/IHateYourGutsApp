@@ -56,7 +56,11 @@ namespace Logic
             
                 int matchedUserId = 0;
                 int maxHammingDistance = 0;
-                foreach (var user in unitOfWork.Users.GetList())
+                var users = unitOfWork.Users.GetList();
+                if (users.Any()) {
+                    matchedUserId = users[0].UserId;
+                }
+                foreach (var user in users)
                 {
                     int distance = HammingDistance(userAnswers, user.GetList());
                     if (distance > maxHammingDistance)

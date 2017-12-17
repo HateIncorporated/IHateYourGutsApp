@@ -7,8 +7,9 @@ using System.Data.Entity;
 
 namespace LibraryV1
 {
-    public class IHateYourGutsDBInitializer : DropCreateDatabaseAlways<Context>
+    public class IHateYourGutsDBInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
+        static Random random = new Random(DateTime.Now.Second);
         protected override void Seed(Context context)
         {
             List<User> defaultUsers = new List<User>();
@@ -46,7 +47,7 @@ namespace LibraryV1
         {
             string strAnswers = "";
             List<int> answers = new List<int>();
-            Random random = new Random();
+            //Random random = new Random();
             for (int i = 0; i < 10; i++)
             {
                 answers.Add(random.Next(0, 100));

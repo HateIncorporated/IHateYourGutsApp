@@ -11,6 +11,11 @@ namespace LibraryV1
     {
         public Context(): base("IHateYourGutsDB")
         {
+            // Указывает EF, что если модель изменилась,
+            // нужно воссоздать базу данных с новой структурой
+           // Database.SetInitializer(
+           //     new DropCreateDatabaseIfModelChanges<SampleContext>());
+
             Database.SetInitializer(new IHateYourGutsDBInitializer());
         }
 

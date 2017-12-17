@@ -48,11 +48,17 @@ namespace TeamProjectCKC
         private void ButtonMatch_Click(object sender, RoutedEventArgs e)
         {
             int match;
-            string name;
+            string name = String.Empty;
             using (_unitOfWork = new UnitOfWork())
             {
-                match = MatchingLogic.FindMatch(_user.GetList(), _unitOfWork);
-                name = _unitOfWork.Users.First(x => x.UserId == match).Name;
+                
+                match = Math.Max(1, MatchingLogic.FindMatch(_user.GetList(), _unitOfWork));
+                var u = _unitOfWork.Users.First(x => x.UserId == match);
+                if (u != null)
+                {
+                    name = u.Name;
+                }
+               
             }
 
             MessageBox.Show($"You are mathced with {name}");
