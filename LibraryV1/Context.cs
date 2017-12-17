@@ -16,5 +16,6 @@ namespace LibraryV1
 
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Question> Questions { get; set; }
     }
 }

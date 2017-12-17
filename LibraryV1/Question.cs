@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace LibraryV1
 {
-    public class Questions
+    public class Question
     {
-        public int QuestionID { get; set; }
+        public int QuestionId { get; set; }
         public string QuestionText { get; set; }
         public int Answer { get; set; }
-
 
     }
 }

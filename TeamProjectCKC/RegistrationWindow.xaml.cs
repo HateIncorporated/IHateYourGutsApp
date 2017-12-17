@@ -25,9 +25,10 @@ namespace TeamProjectCKC
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-        private UnitOfWork unitOfWork = new UnitOfWork();
+        private UnitOfWork unitOfWork;
         public RegistrationWindow()
         {
+            unitOfWork = new UnitOfWork();
             InitializeComponent();
         }
 
@@ -40,7 +41,7 @@ namespace TeamProjectCKC
 
         private void ButtonSubmit_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new Context())
+            using (unitOfWork)
             {
                 if (textBoxLogin.Text == "" ||
                     textBoxLastName.Text == "" ||
@@ -63,13 +64,13 @@ namespace TeamProjectCKC
                 //    return;
                 //}
                 
-                context.Users.Add(new User
+                unitOfWork.Users.Add(new User
                 {
                     Name = textBoxLastName.Text + " " + textBoxFirstName.Text,
                     Login = textBoxLogin.Text,
                     Password = passwordBox.Password
                 });
-                context.SaveChanges();
+                unitOfWork.SaveChanges();
             }
             MainWindow mainWindow = new MainWindow(textBoxLogin.Text);
             mainWindow.Show();

@@ -12,6 +12,7 @@ namespace LibraryV1
         protected override void Seed(Context context)
         {
             List<User> defaultUsers = new List<User>();
+            List<Question> defaultQuestions = new List<Question>();
             
             defaultUsers.Add(new User() { Name = "Chernakov Egor", Login = "nagibator", Password = "1234", Answers = GenerateAnswers() });
             defaultUsers.Add(new User() { Name = "Korneev Grisha", Login = "natsuki_lover", Password = "iLoveProgramming", Answers = GenerateAnswers() });
@@ -21,6 +22,22 @@ namespace LibraryV1
 
             foreach (var user in defaultUsers)
                 context.Users.Add(user);
+
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "I  prefer action films to calm ones" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "I'd better go to bed earlier so as to get up earlier" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "Pizza with pineapples is fantastic!" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "Russian nowadays music is pretty good" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "One day I wnat to move to another country" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "Coding on C# is the best thing in the world!" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "I prefer staying at home rather than going somewhere" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "Getting up in the morning is often a challenge for me" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "I'd better order food rather than make it by myself" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "Healthy lifestyle - that's about me" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "I never do things at the last moment" });
+            defaultQuestions.Add(new Question() { Answer = 50, QuestionText = "I can't live without music" });
+
+            foreach (var question in defaultQuestions)
+                context.Questions.Add(question);
 
             base.Seed(context);
         }
