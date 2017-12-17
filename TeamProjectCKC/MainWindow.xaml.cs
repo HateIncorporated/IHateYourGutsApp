@@ -36,7 +36,9 @@ namespace TeamProjectCKC
 
         private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow logwindow = new LoginWindow();
+            logwindow.Show();
+            this.Close();
         }
 
         private void ButtonMatch_Click(object sender, RoutedEventArgs e)
